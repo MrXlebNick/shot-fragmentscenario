@@ -5,6 +5,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.karumi.shot.ScreenshotTest
+import io.reactivex.Single
+import io.reactivex.schedulers.Schedulers
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -16,7 +18,7 @@ import org.junit.Assert.*
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleInstrumentedTest: ScreenshotTest {
+class ExampleInstrumentedTest : ScreenshotTest {
     @Test
     fun test() {
         val fragmentScenario = launchFragmentInContainer(themeResId = R.style.AppTheme) {
@@ -24,7 +26,12 @@ class ExampleInstrumentedTest: ScreenshotTest {
         }
         fragmentScenario.moveToState(Lifecycle.State.RESUMED)
         fragmentScenario.onFragment {
-            compareScreenshot(it)
+            Single
+                .fromCallable {
+                    compareScreenshot(it)
+                }
+                .subscribeOn(Schedulers.io())
+                .subscribe()
         }
     }
 }
