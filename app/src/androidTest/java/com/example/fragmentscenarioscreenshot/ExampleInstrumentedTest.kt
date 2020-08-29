@@ -1,4 +1,4 @@
-package com.example.screenshotfailing
+package com.example.fragmentscenarioscreenshot
 
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.lifecycle.Lifecycle

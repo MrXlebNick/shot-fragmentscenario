@@ -1,4 +1,4 @@
-package com.example.screenshotfailing
+package com.example.fragmentscenarioscreenshot
 
 import org.junit.Test
 

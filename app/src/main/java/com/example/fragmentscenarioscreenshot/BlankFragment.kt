@@ -1,4 +1,4 @@
-package com.example.screenshotfailing
+package com.example.fragmentscenarioscreenshot
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle

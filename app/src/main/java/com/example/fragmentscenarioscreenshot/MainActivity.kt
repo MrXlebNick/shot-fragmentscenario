@@ -1,4 +1,4 @@
-package com.example.screenshotfailing
+package com.example.fragmentscenarioscreenshot
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
