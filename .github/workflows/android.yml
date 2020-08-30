@@ -35,4 +35,4 @@ jobs:
           $ANDROID_HOME/platform-tools/adb shell input keyevent 4 &
       
     - name: Run screenshot tests
-      run: ./gradlew executeScreenshotTests -Precord
+      run: ./gradlew executeScreenshotTests -Precord --info --stacktrace
